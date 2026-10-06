@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore application-aware maintenance: canary node updates, health gates, and automatic stops when business services degrade.">
-  <title>Maintenance Control Plane · Interactive demo</title>
+  <meta name="description" content="SteadyOps — application-aware infrastructure maintenance: canary node updates, health gates, and automatic stops when business services degrade.">
+  <title>SteadyOps · Safe infrastructure changes</title>
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header><a class="brand" href="./"><span class="logo">M</span> Maintenance<span class="brand-light"> / control plane</span></a><a class="source" href="https://github.com/GudaSriram/maintenance-control-plane">View source ↗</a></header>
+  <header><a class="brand" href="./"><span class="logo">S</span> SteadyOps<span class="brand-light"> / control plane</span></a><a class="source" href="https://github.com/GudaSriram/maintenance-control-plane">View source ↗</a></header>
   <main>
     <div class="intro"><div><p class="eyebrow">APPLICATION-AWARE MAINTENANCE</p><h1>Change infrastructure.<br><span>Keep the business healthy.</span></h1><p class="lede">Watch a canary node update, observe application health, and see the controller decide whether it is safe to continue.</p></div><div class="demo-tag"><span class="dot"></span> INTERACTIVE POC<span>Simulated cluster · No cloud access</span></div></div>
     <section class="controls" aria-label="Demo controls"><div class="scenario-field"><label for="scenario">Choose a scenario</label><select id="scenario" disabled><option value="checkout">Checkout fails after canary</option><option value="healthy">Healthy maintenance</option><option value="errors">HTTP errors increase</option><option value="latency">Latency spikes</option><option value="telemetry">Monitoring disappears</option><option value="pdb">Disruption budget blocks change</option><option value="capacity">Insufficient capacity</option><option value="replicas">Insufficient replicas</option></select></div><button id="play" class="primary" disabled>Run demo</button><button id="step" disabled>Next step</button><button id="reset" disabled>Reset</button><label class="speed">Playback<select id="speed"><option value="650">Normal</option><option value="140">Fast</option></select></label></section>

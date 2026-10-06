@@ -83,7 +83,7 @@ $("reset").addEventListener("click", reset); $("scenario").addEventListener("cha
 $("speed").addEventListener("change", () => { if (timer) { clearInterval(timer); timer = setInterval(step, Number($("speed").value)); } });
 $("download").addEventListener("click", () => {
   const url = URL.createObjectURL(new Blob([JSON.stringify(report, null, 2)], {type:"application/json"}));
-  const link = document.createElement("a"); link.href = url; link.download = `maintenance-${report.scenario}.json`; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  const link = document.createElement("a"); link.href = url; link.download = `steadyops-${report.scenario}.json`; document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
 });
 fetch("scenarios.json").then(response => { if (!response.ok) throw new Error("Scenario data unavailable"); return response.json(); }).then(data => {
   reports = data; ["scenario", "play", "step", "reset", "download"].forEach(id => $(id).disabled = false); reset();
