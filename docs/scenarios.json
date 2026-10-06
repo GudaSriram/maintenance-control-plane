@@ -1,0 +1,1614 @@
+{
+  "healthy": {
+    "mode": "simulation",
+    "scenario": "healthy",
+    "state": "COMPLETE",
+    "changed_nodes": 10,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v2"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [],
+        "disruptions_allowed": 1,
+        "headroom": 0.4
+      },
+      {
+        "sequence": 3,
+        "state": "CANARY",
+        "cohort": [
+          "node-01"
+        ]
+      },
+      {
+        "sequence": 4,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 5,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 6,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 7,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 8,
+        "state": "CONTINUE",
+        "verified_nodes": 1
+      },
+      {
+        "sequence": 9,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-02"
+        ]
+      },
+      {
+        "sequence": 10,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 11,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 12,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 13,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 14,
+        "state": "CONTINUE",
+        "verified_nodes": 2
+      },
+      {
+        "sequence": 15,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-03"
+        ]
+      },
+      {
+        "sequence": 16,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 17,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 18,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 19,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 20,
+        "state": "CONTINUE",
+        "verified_nodes": 3
+      },
+      {
+        "sequence": 21,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-04"
+        ]
+      },
+      {
+        "sequence": 22,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 23,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 24,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 25,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 26,
+        "state": "CONTINUE",
+        "verified_nodes": 4
+      },
+      {
+        "sequence": 27,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-05"
+        ]
+      },
+      {
+        "sequence": 28,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 29,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 30,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 31,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 32,
+        "state": "CONTINUE",
+        "verified_nodes": 5
+      },
+      {
+        "sequence": 33,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-06"
+        ]
+      },
+      {
+        "sequence": 34,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 35,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 36,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 37,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 38,
+        "state": "CONTINUE",
+        "verified_nodes": 6
+      },
+      {
+        "sequence": 39,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-07"
+        ]
+      },
+      {
+        "sequence": 40,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 41,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 42,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 43,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 44,
+        "state": "CONTINUE",
+        "verified_nodes": 7
+      },
+      {
+        "sequence": 45,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-08"
+        ]
+      },
+      {
+        "sequence": 46,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 47,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 48,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 49,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 50,
+        "state": "CONTINUE",
+        "verified_nodes": 8
+      },
+      {
+        "sequence": 51,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-09"
+        ]
+      },
+      {
+        "sequence": 52,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 53,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 54,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 55,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 56,
+        "state": "CONTINUE",
+        "verified_nodes": 9
+      },
+      {
+        "sequence": 57,
+        "state": "EXECUTE_NEXT",
+        "cohort": [
+          "node-10"
+        ]
+      },
+      {
+        "sequence": 58,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 59,
+        "state": "OBSERVE",
+        "sample": 2,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 60,
+        "state": "OBSERVE",
+        "sample": 3,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 61,
+        "state": "EVALUATE",
+        "decision": "CONTINUE",
+        "reasons": [
+          "All health gates passed"
+        ]
+      },
+      {
+        "sequence": 62,
+        "state": "CONTINUE",
+        "verified_nodes": 10
+      },
+      {
+        "sequence": 63,
+        "state": "COMPLETE",
+        "reasons": [
+          "Every replacement passed its observation window"
+        ]
+      }
+    ]
+  },
+  "pdb": {
+    "mode": "simulation",
+    "scenario": "pdb",
+    "state": "BLOCKED",
+    "changed_nodes": 0,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v1"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [
+          "Pod disruption budget permits no evictions"
+        ],
+        "disruptions_allowed": 0,
+        "headroom": 0.4
+      },
+      {
+        "sequence": 3,
+        "state": "BLOCKED",
+        "reasons": [
+          "Pod disruption budget permits no evictions"
+        ]
+      }
+    ]
+  },
+  "capacity": {
+    "mode": "simulation",
+    "scenario": "capacity",
+    "state": "BLOCKED",
+    "changed_nodes": 0,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v1"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [
+          "Insufficient CPU/memory headroom"
+        ],
+        "disruptions_allowed": 1,
+        "headroom": 0.1
+      },
+      {
+        "sequence": 3,
+        "state": "BLOCKED",
+        "reasons": [
+          "Insufficient CPU/memory headroom"
+        ]
+      }
+    ]
+  },
+  "replicas": {
+    "mode": "simulation",
+    "scenario": "replicas",
+    "state": "BLOCKED",
+    "changed_nodes": 0,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v1"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [
+          "Checkout has insufficient replicas"
+        ],
+        "disruptions_allowed": 1,
+        "headroom": 0.4
+      },
+      {
+        "sequence": 3,
+        "state": "BLOCKED",
+        "reasons": [
+          "Checkout has insufficient replicas"
+        ]
+      }
+    ]
+  },
+  "errors": {
+    "mode": "simulation",
+    "scenario": "errors",
+    "state": "ABORT",
+    "changed_nodes": 1,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v1"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [],
+        "disruptions_allowed": 1,
+        "headroom": 0.4
+      },
+      {
+        "sequence": 3,
+        "state": "CANARY",
+        "cohort": [
+          "node-01"
+        ]
+      },
+      {
+        "sequence": 4,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.047,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 5,
+        "state": "EVALUATE",
+        "decision": "ABORT",
+        "reasons": [
+          "HTTP error rate exceeds absolute limit",
+          "HTTP error rate exceeds baseline delta"
+        ]
+      },
+      {
+        "sequence": 6,
+        "state": "ABORT",
+        "reasons": [
+          "HTTP error rate exceeds absolute limit",
+          "HTTP error rate exceeds baseline delta"
+        ],
+        "recovery": "Operator review required; changed images are retained, no rollback claimed"
+      }
+    ]
+  },
+  "latency": {
+    "mode": "simulation",
+    "scenario": "latency",
+    "state": "ABORT",
+    "changed_nodes": 1,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v1"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [],
+        "disruptions_allowed": 1,
+        "headroom": 0.4
+      },
+      {
+        "sequence": 3,
+        "state": "CANARY",
+        "cohort": [
+          "node-01"
+        ]
+      },
+      {
+        "sequence": 4,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 2400,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 5,
+        "state": "EVALUATE",
+        "decision": "ABORT",
+        "reasons": [
+          "P95 latency exceeds baseline tolerance"
+        ]
+      },
+      {
+        "sequence": 6,
+        "state": "ABORT",
+        "reasons": [
+          "P95 latency exceeds baseline tolerance"
+        ],
+        "recovery": "Operator review required; changed images are retained, no rollback claimed"
+      }
+    ]
+  },
+  "checkout": {
+    "mode": "simulation",
+    "scenario": "checkout",
+    "state": "ABORT",
+    "changed_nodes": 1,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v1"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [],
+        "disruptions_allowed": 1,
+        "headroom": 0.4
+      },
+      {
+        "sequence": 3,
+        "state": "CANARY",
+        "cohort": [
+          "node-01"
+        ]
+      },
+      {
+        "sequence": 4,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.942,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        }
+      },
+      {
+        "sequence": 5,
+        "state": "EVALUATE",
+        "decision": "ABORT",
+        "reasons": [
+          "Checkout success below business SLI threshold"
+        ]
+      },
+      {
+        "sequence": 6,
+        "state": "ABORT",
+        "reasons": [
+          "Checkout success below business SLI threshold"
+        ],
+        "recovery": "Operator review required; changed images are retained, no rollback claimed"
+      }
+    ]
+  },
+  "telemetry": {
+    "mode": "simulation",
+    "scenario": "telemetry",
+    "state": "ABORT",
+    "changed_nodes": 1,
+    "total_nodes": 10,
+    "policy": {
+      "max_error_rate": 0.01,
+      "max_error_increase": 0.005,
+      "max_latency_ratio": 1.2,
+      "min_checkout_success": 0.99,
+      "min_headroom": 0.3,
+      "observation_samples": 3,
+      "max_hold_rounds": 2
+    },
+    "nodes": [
+      {
+        "name": "node-01",
+        "zone": "zone-1",
+        "image": "image-v2"
+      },
+      {
+        "name": "node-02",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-03",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-04",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-05",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-06",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-07",
+        "zone": "zone-1",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-08",
+        "zone": "zone-2",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-09",
+        "zone": "zone-3",
+        "image": "image-v1"
+      },
+      {
+        "name": "node-10",
+        "zone": "zone-1",
+        "image": "image-v1"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "state": "DISCOVER",
+        "nodes": 10,
+        "workload": "checkout",
+        "dependencies": [
+          "node pool",
+          "checkout replicas",
+          "payment dependency",
+          "checkout SLI"
+        ]
+      },
+      {
+        "sequence": 2,
+        "state": "PREFLIGHT",
+        "baseline": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": true
+        },
+        "reasons": [],
+        "disruptions_allowed": 1,
+        "headroom": 0.4
+      },
+      {
+        "sequence": 3,
+        "state": "CANARY",
+        "cohort": [
+          "node-01"
+        ]
+      },
+      {
+        "sequence": 4,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": false
+        }
+      },
+      {
+        "sequence": 5,
+        "state": "EVALUATE",
+        "decision": "HOLD",
+        "reasons": [
+          "Monitoring unavailable; no evidence to authorize progression"
+        ]
+      },
+      {
+        "sequence": 6,
+        "state": "HOLD",
+        "reasons": [
+          "Monitoring unavailable; no evidence to authorize progression"
+        ],
+        "round": 1
+      },
+      {
+        "sequence": 7,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": false
+        }
+      },
+      {
+        "sequence": 8,
+        "state": "EVALUATE",
+        "decision": "HOLD",
+        "reasons": [
+          "Monitoring unavailable; no evidence to authorize progression"
+        ]
+      },
+      {
+        "sequence": 9,
+        "state": "HOLD",
+        "reasons": [
+          "Monitoring unavailable; no evidence to authorize progression"
+        ],
+        "round": 2
+      },
+      {
+        "sequence": 10,
+        "state": "OBSERVE",
+        "sample": 1,
+        "metrics": {
+          "error_rate": 0.001,
+          "p95_ms": 180,
+          "checkout_success": 0.999,
+          "ready": true,
+          "pending_pods": 0,
+          "available": false
+        }
+      },
+      {
+        "sequence": 11,
+        "state": "EVALUATE",
+        "decision": "HOLD",
+        "reasons": [
+          "Monitoring unavailable; no evidence to authorize progression"
+        ]
+      },
+      {
+        "sequence": 12,
+        "state": "HOLD",
+        "reasons": [
+          "Monitoring unavailable; no evidence to authorize progression"
+        ],
+        "round": 3
+      },
+      {
+        "sequence": 13,
+        "state": "ABORT",
+        "reasons": [
+          "Telemetry hold budget exhausted"
+        ],
+        "recovery": "Restore monitoring and review changed nodes before a new run"
+      }
+    ]
+  }
+}
