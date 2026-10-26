@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Layers3, ArrowUpRight } from "lucide-react";
 import { Navigation } from "@/components/navigation";
 import "./globals.css";
+import "./editorial.css";
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://gudasriram.github.io/maintenance-control-plane",
