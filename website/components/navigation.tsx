@@ -1,6 +1,6 @@
 import { SiteLink } from "@/components/site-link";
 import { Menu, ArrowUpRight, Layers3 } from "lucide-react";
-const links = [["What we do", "/#what-we-do"], ["About", "/about"], ["Contact", "/contact"]];
+const links = [["Who it’s for", "/#who-its-for"], ["Pricing", "/pricing"], ["About", "/about"], ["Contact", "/contact"]];
 export function Navigation() {
   return (
     <header className="header">

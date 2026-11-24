@@ -1,6 +1,6 @@
 export const dynamic = "force-static";
 import { ImageResponse } from "next/og";
-export const alt = "SteadyOps — Agent Reliability & Safe Upgrades";
+export const alt = "SteadyOps — Swap the model. Keep the behaviour.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export default function Image() {
@@ -18,7 +18,7 @@ export default function Image() {
       }}
     >
       <div style={{ fontSize: 30 }}>
-        SteadyOps / ONGOING CARE FOR AI AGENTS
+        SteadyOps / AI AGENT MAINTENANCE
       </div>
       <div
         style={{
@@ -28,11 +28,11 @@ export default function Image() {
           flexDirection: "column",
         }}
       >
-        Keep your agents reliable.
-        <span style={{ color: "#87b0fa" }}>Make every upgrade safer.</span>
+        Swap the model.
+        <span style={{ color: "#87b0fa" }}>Keep the behaviour.</span>
       </div>
       <div style={{ fontSize: 24, color: "#b5c7e0" }}>
-        Build. Operate. Improve.
+        Model Migration Check · from $1,500
       </div>
     </div>,
     size,
