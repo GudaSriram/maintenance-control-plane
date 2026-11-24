@@ -15,3 +15,22 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: python -m unittest discover -s tests -v
       - run: python control_plane.py --scenario healthy --output reports/healthy.json
+  website:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install website dependencies
+        working-directory: website
+        run: npm install --no-audit --no-fund
+      - name: Type-check
+        working-directory: website
+        run: npm run check
+      - name: Build static site
+        working-directory: website
+        env:
+          NEXT_TELEMETRY_DISABLED: '1'
+          NEXT_PUBLIC_SITE_URL: https://steadyops.in
+        run: npm run build

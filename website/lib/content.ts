@@ -366,31 +366,11 @@ export const packages = [
   },
 ];
 export const faqs = [
-  ["Can you maintain agents we already have?", "We can begin with an assessment of your agents, tools, evaluations and operating setup. That establishes what can be supported and the scope of any remediation or ongoing maintenance."],
-  ["What does agent reliability include?", "Evaluation cases, execution traces, failure handling, controlled model and prompt updates, and maintenance of connected tools. Monitoring coverage and response times are agreed for each engagement."],
-
-  [
-    "What kind of businesses do you work with?",
-    "We work with startups, SMEs, marketing agencies and business technology teams. We start by understanding your goals and identifying a scope that fits your stage and resources.",
-  ],
-  [
-    "Can you work with our existing tools?",
-    "Yes. Discovery includes reviewing your applications, APIs, infrastructure and constraints. We recommend integration or replacement based on the business need.",
-  ],
-  [
-    "How do you estimate scope, cost and timeline?",
-    "We discuss requirements, dependencies and success criteria before proposing milestones and pricing. Starting prices are indicative; the agreed proposal defines the deliverables.",
-  ],
-  [
-    "Do you offer ongoing support?",
-    "Maintenance, monitoring and improvement work can be included in a separately agreed support arrangement with clear responsibilities and response expectations.",
-  ],
-  [
-    "How do you keep AI automation under control?",
-    "We define access boundaries, evaluate outputs and use human approval for consequential actions. Where an assistant cannot confidently resolve a request, it should escalate.",
-  ],
-  [
-    "Are the portfolio projects client engagements?",
-    "No. Our Work shows clearly labelled demonstration concepts and local interactive examples. They illustrate proposed approaches, not verified client outcomes.",
-  ],
+  ["What exactly do I get from a Model Migration Check?", "A test suite built from your agent's critical tasks, business rules and known failures; a side-by-side run of your current version and the planned change; and a written report of what changed, what broke and what to fix first, with a clear recommendation. The test suite is yours to keep."],
+  ["Can you work on agents we or someone else already built?", "Yes. That is the main use case. We start from the agent as it runs today and record its current behaviour as the baseline before anything changes."],
+  ["We're an agency. Can you work under our name?", "Yes. We can maintain your clients' agents white-label, or alongside you under the SteadyOps name. You keep the client relationship either way."],
+  ["What access do you need?", "To start, read access to the agent's code or configuration and a way to run it against test cases, ideally a staging environment. We don't need production credentials for the check, and nothing ships without your approval."],
+  ["Which stacks do you support?", "Agents built on the major model providers (OpenAI, Anthropic, Google, Azure OpenAI, open models) and common frameworks, or plain API calls. If it can be run against test inputs, it can be tested."],
+  ["Can you guarantee nothing will break?", "No one honestly can. What we guarantee is evidence: you'll know what changed before release, and every release has a way back."],
+  ["What happens after the check?", "You can stop there and use the test suite yourselves, or move to monthly maintenance where every change is tested, repaired and released with a rollback plan."],
 ];

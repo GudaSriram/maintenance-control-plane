@@ -2,6 +2,7 @@ import { SiteLink } from "@/components/site-link";
 import type { Metadata } from "next";
 import { Layers3, ArrowUpRight } from "lucide-react";
 import { Navigation } from "@/components/navigation";
+import { CONTACT_EMAIL, mailto } from "@/lib/site";
 import "./globals.css";
 import "./editorial.css";
 export const metadata: Metadata = {
@@ -9,17 +10,17 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://gudasriram.github.io/maintenance-control-plane",
   ),
   title: {
-    default: "SteadyOps — Agent Reliability & Safe Upgrades",
+    default: "SteadyOps — Swap the model. Keep the behaviour.",
     template: "%s | SteadyOps",
   },
   description:
-    "Ongoing agent maintenance and safe upgrades. Keep critical tasks working through model, prompt and API changes.",
+    "SteadyOps tests and maintains production AI agents through model, prompt and API changes. Model Migration Check from $1,500.",
   openGraph: {
     type: "website",
     siteName: "SteadyOps",
-    title: "Your agents work today. Keep them working through every change.",
+    title: "SteadyOps — Swap the model. Keep the behaviour.",
     description:
-      "Ongoing agent maintenance through model, prompt and API changes.",
+      "Before-and-after testing and ongoing maintenance for production AI agents. For AI agencies and product teams.",
     images: ["/opengraph-image"],
   },
   twitter: { card: "summary_large_image" },
@@ -54,9 +55,9 @@ export default function RootLayout({
                   </span>
                 </SiteLink>
                 <p>
-                  Keep your agents reliable.
+                  Swap the model.
                   <br />
-                  Make every upgrade safer.
+                  Keep the behaviour.
                 </p>
                 <span className="footer-location">
                   Based in India. Built for a connected world.
@@ -64,11 +65,11 @@ export default function RootLayout({
               </div>
               <div>
                 <h4>SteadyOps</h4>
-                <SiteLink href="/">Home</SiteLink><SiteLink href="/about">About</SiteLink><SiteLink href="/contact">Contact us</SiteLink>
+                <SiteLink href="/">Home</SiteLink><SiteLink href="/pricing">Pricing</SiteLink><SiteLink href="/about">About</SiteLink><SiteLink href="/contact">Contact</SiteLink>
               </div>
               <div>
-                <h4>More from SteadyOps</h4>
-                <SiteLink href="/services">Supporting services</SiteLink><SiteLink href="/work">Engineering examples</SiteLink><SiteLink href="/privacy">Privacy policy</SiteLink>
+                <h4>Get in touch</h4>
+                <a href={mailto()}>{CONTACT_EMAIL}</a><SiteLink href="/privacy">Privacy policy</SiteLink>
               </div>
             </div>
             <div className="footer-bottom">
